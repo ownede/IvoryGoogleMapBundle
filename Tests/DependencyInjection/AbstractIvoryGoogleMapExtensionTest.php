@@ -40,7 +40,7 @@ abstract class AbstractIvoryGoogleMapExtensionTest extends \PHPUnit_Framework_Te
         $this->requestMock = $this->getMock('Symfony\Component\HttpFoundation\Request');
 
         $this->container = new ContainerBuilder();
-        //$this->container->addScope(new Scope('request'));
+//        $this->container->set(new Scope('request'));
         $this->container->setParameter('templating.engines', array('php', 'twig'));
         $this->container->set('request', $this->requestMock);
         $this->container->registerExtension(new IvoryGoogleMapExtension());

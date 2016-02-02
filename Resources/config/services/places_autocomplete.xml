@@ -13,7 +13,7 @@
         <service
             id="ivory_google_map.places_autocomplete.form.type"
             class="%ivory_google_map.places_autocomplete.form.type.class%"
-            scope="request"
+            shared="false"
         >
             <argument type="service" id="ivory_google_map.places_autocomplete.helper" />
             <argument type="service" id="request" />

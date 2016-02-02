@@ -12,7 +12,7 @@
 
     <services>
         <!-- KML Layer service -->
-        <service id="ivory_google_map.kml_layer" class="%ivory_google_map.kml_layer.class%" scope="prototype">
+        <service id="ivory_google_map.kml_layer" class="%ivory_google_map.kml_layer.class%" shared="false">
             <factory service="ivory_google_map.kml_layer.builder" method="build" />
         </service>
 

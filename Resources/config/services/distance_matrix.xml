@@ -13,7 +13,7 @@
     <services>
         <service id="ivory_google_map.distance_matrix" class="%ivory_google_map.distance_matrix.class%" />
 
-        <service id="ivory_google_map.distance_matrix_request" class="%ivory_google_map.distance_matrix_request.class%" scope="prototype">
+        <service id="ivory_google_map.distance_matrix_request" class="%ivory_google_map.distance_matrix_request.class%" shared="false">
             <factory service="ivory_google_map.distance_matrix_request.builder" method="build" />
         </service>
 

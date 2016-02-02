@@ -14,7 +14,7 @@
 
     <services>
         <!-- Map services -->
-        <service id="ivory_google_map.map" class="%ivory_google_map.map.class%" scope="prototype">
+        <service id="ivory_google_map.map" class="%ivory_google_map.map.class%" shared="false">
             <factory service="ivory_google_map.map.builder" method="build" />
         </service>
 

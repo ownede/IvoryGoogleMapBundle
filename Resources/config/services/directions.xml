@@ -13,7 +13,7 @@
     <services>
         <service id="ivory_google_map.directions" class="%ivory_google_map.directions.class%" />
 
-        <service id="ivory_google_map.directions_request" class="%ivory_google_map.directions_request.class%" scope="prototype">
+        <service id="ivory_google_map.directions_request" class="%ivory_google_map.directions_request.class%" shared="false">
             <factory service="ivory_google_map.directions_request.builder" method="build" />
         </service>
 

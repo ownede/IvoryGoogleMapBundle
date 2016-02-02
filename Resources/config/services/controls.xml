@@ -41,8 +41,8 @@
 
     <services>
         <!-- Map type control service -->
-        <service id="ivory_google_map.map_type_control" class="%ivory_google_map.map_type_control.class%" scope="prototype">
-            <factory service="ivory_google_map.map_type_control.builder.size.builder" method="build" />
+        <service id="ivory_google_map.map_type_control" class="%ivory_google_map.map_type_control.class%" shared="false">
+            <factory service="ivory_google_map.map_type_control.builder" method="build" />
         </service>
 
         <service
@@ -63,7 +63,7 @@
         </service>
 
         <!-- Overview map control service -->
-        <service id="ivory_google_map.overview_map_control" class="%ivory_google_map.overview_map_control.class%" scope="prototype">
+        <service id="ivory_google_map.overview_map_control" class="%ivory_google_map.overview_map_control.class%" shared="false">
             <factory service="ivory_google_map.overview_map_control.builder" method="build" />
         </service>
 
@@ -81,7 +81,7 @@
         />
 
         <!-- Pan control service -->
-        <service id="ivory_google_map.pan_control" class="%ivory_google_map.pan_control.class%" scope="prototype">
+        <service id="ivory_google_map.pan_control" class="%ivory_google_map.pan_control.class%" shared="false">
             <factory service="ivory_google_map.pan_control.builder" method="build" />
         </service>
 
@@ -98,7 +98,7 @@
         </service>
 
         <!-- Rotate control service -->
-        <service id="ivory_google_map.rotate_control" class="%ivory_google_map.rotate_control.class%" scope="prototype">
+        <service id="ivory_google_map.rotate_control" class="%ivory_google_map.rotate_control.class%" shared="false">
             <factory service="ivory_google_map.rotate_control.builder" method="build" />
         </service>
 
@@ -115,7 +115,7 @@
         </service>
 
         <!-- Scale control service -->
-        <service id="ivory_google_map.scale_control" class="%ivory_google_map.scale_control.class%" scope="prototype">
+        <service id="ivory_google_map.scale_control" class="%ivory_google_map.scale_control.class%" shared="false">
             <factory service="ivory_google_map.scale_control.builder" method="build" />
         </service>
 
@@ -133,7 +133,7 @@
         </service>
 
         <!-- Street view control service -->
-        <service id="ivory_google_map.street_view_control" class="%ivory_google_map.street_view_control.class%" scope="prototype">
+        <service id="ivory_google_map.street_view_control" class="%ivory_google_map.street_view_control.class%" shared="false">
             <factory service="ivory_google_map.street_view_control.builder" method="build" />
         </service>
 
@@ -153,7 +153,7 @@
         </service>
 
         <!-- Zoom control service -->
-        <service id="ivory_google_map.zoom_control" class="%ivory_google_map.zoom_control.class%" scope="prototype">
+        <service id="ivory_google_map.zoom_control" class="%ivory_google_map.zoom_control.class%" shared="false">
             <factory service="ivory_google_map.zoom_control.builder" method="build" />
         </service>
 

@@ -31,7 +31,7 @@
             public="false"
         />
 
-        <service id="ivory_google_map.geocoder_request" class="%ivory_google_map.geocoder_request.class%" scope="prototype">
+        <service id="ivory_google_map.geocoder_request" class="%ivory_google_map.geocoder_request.class%" shared="false">
             <factory service="ivory_google_map.geocoder_request.builder" method="build" />
         </service>
 

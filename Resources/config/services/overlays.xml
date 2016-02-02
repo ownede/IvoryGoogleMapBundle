@@ -66,7 +66,7 @@
         />
 
         <!-- Circle service -->
-        <service id="ivory_google_map.circle" class="%ivory_google_map.circle.class%" scope="prototype">
+        <service id="ivory_google_map.circle" class="%ivory_google_map.circle.class%" shared="false">
             <factory service="ivory_google_map.circle.builder" method="build" />
         </service>
 
@@ -78,7 +78,7 @@
         <service id="ivory_google_map.helper.circle" class="%ivory_google_map.circle.helper.class%" public="false" />
 
         <!-- Encoded polyline service -->
-        <service id="ivory_google_map.encoded_polyline" class="%ivory_google_map.encoded_polyline.class%" scope="prototype">
+        <service id="ivory_google_map.encoded_polyline" class="%ivory_google_map.encoded_polyline.class%" shared="false">
             <factory service="ivory_google_map.encoded_polyline.builder" method="build" />
         </service>
 
@@ -104,7 +104,7 @@
         />
 
         <!-- Ground overlay service -->
-        <service id="ivory_google_map.ground_overlay" class="%ivory_google_map.ground_overlay.class%" scope="prototype">
+        <service id="ivory_google_map.ground_overlay" class="%ivory_google_map.ground_overlay.class%" shared="false">
             <factory service="ivory_google_map.ground_overlay.builder" method="build" />
         </service>
 
@@ -120,7 +120,7 @@
         />
 
         <!-- Info window service -->
-        <service id="ivory_google_map.info_window" class="%ivory_google_map.info_window.class%" scope="prototype">
+        <service id="ivory_google_map.info_window" class="%ivory_google_map.info_window.class%" shared="false">
             <factory service="ivory_google_map.info_window.builder" method="build" />
         </service>
 
@@ -137,7 +137,7 @@
         />
 
         <!-- Marker cluster service -->
-        <service id="ivory_google_map.marker_cluster" class="%ivory_google_map.marker_cluster.class%" scope="prototype">
+        <service id="ivory_google_map.marker_cluster" class="%ivory_google_map.marker_cluster.class%" shared="false">
             <factory service="ivory_google_map.marker_cluster.builder" method="build" />
         </service>
 
@@ -181,7 +181,7 @@
         />
 
         <!-- Marker service -->
-        <service id="ivory_google_map.marker" class="%ivory_google_map.marker.class%" scope="prototype">
+        <service id="ivory_google_map.marker" class="%ivory_google_map.marker.class%" shared="false">
             <factory service="ivory_google_map.marker.builder" method="build" />
         </service>
 
@@ -195,7 +195,7 @@
         </service>
 
         <!-- Marker image service -->
-        <service id="ivory_google_map.marker_image" class="%ivory_google_map.marker_image.class%" scope="prototype">
+        <service id="ivory_google_map.marker_image" class="%ivory_google_map.marker_image.class%" shared="false">
             <factory service="ivory_google_map.marker_image.builder" method="build" />
         </service>
 
@@ -212,7 +212,7 @@
         />
 
         <!-- Marker shape service -->
-        <service id="ivory_google_map.marker_shape" class="%ivory_google_map.marker_shape.class%" scope="prototype">
+        <service id="ivory_google_map.marker_shape" class="%ivory_google_map.marker_shape.class%" shared="false">
             <factory service="ivory_google_map.marker_shape.builder" method="build" />
         </service>
 
@@ -227,7 +227,7 @@
         />
 
         <!-- Polygon service -->
-        <service id="ivory_google_map.polygon" class="%ivory_google_map.polygon.class%" scope="prototype">
+        <service id="ivory_google_map.polygon" class="%ivory_google_map.polygon.class%" shared="false">
             <factory service="ivory_google_map.polygon.builder" method="build" />
         </service>
 
@@ -238,7 +238,7 @@
         <service id="ivory_google_map.helper.polygon" class="%ivory_google_map.polygon.helper.class%" public="false" />
 
         <!-- Polyline service -->
-        <service id="ivory_google_map.polyline" class="%ivory_google_map.polyline.class%" scope="prototype">
+        <service id="ivory_google_map.polyline" class="%ivory_google_map.polyline.class%" shared="false">
             <factory service="ivory_google_map.polyline.builder" method="build" />
         </service>
 
@@ -253,7 +253,7 @@
         />
 
         <!-- Rectangle service -->
-        <service id="ivory_google_map.rectangle" class="%ivory_google_map.rectangle.class%" scope="prototype">
+        <service id="ivory_google_map.rectangle" class="%ivory_google_map.rectangle.class%" shared="false">
             <factory service="ivory_google_map.rectangle.builder" method="build" />
         </service>
 
