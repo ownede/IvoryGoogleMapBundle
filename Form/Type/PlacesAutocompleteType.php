@@ -18,6 +18,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
@@ -30,16 +31,16 @@ class PlacesAutocompleteType extends AbstractType
     /** @var \Ivory\GoogleMap\Helper\Places\AutocompleteHelper */
     protected $autocompleteHelper;
 
-    /** @var \Symfony\Component\HttpFoundation\Request */
+    /** @var \Symfony\Component\HttpFoundation\RequestStack */
     protected $request;
 
     /**
      * Creates a places autocomplete form type.
      *
      * @param \Ivory\GoogleMap\Helper\Places\AutocompleteHelper $autocompleteHelper The autocomplete helper.
-     * @param \Ivory\GoogleMapBundle\Form\Type\Request          $request            The http request.
+     * @param RequestStack                                      $request            The http request.
      */
-    public function __construct(AutocompleteHelper $autocompleteHelper, Request $request)
+    public function __construct(AutocompleteHelper $autocompleteHelper, RequestStack $request)
     {
         $this->setAutocompleteHelper($autocompleteHelper);
         $this->setRequest($request);
@@ -68,7 +69,7 @@ class PlacesAutocompleteType extends AbstractType
     /**
      * Gets the http request.
      *
-     * @return \Symfony\Component\HttpFoundation\Request The http request.
+     * @return \Symfony\Component\HttpFoundation\RequestStack The http request.
      */
     public function getRequest()
     {
@@ -78,9 +79,9 @@ class PlacesAutocompleteType extends AbstractType
     /**
      * Sets the http request.
      *
-     * @param \Symfony\Component\HttpFoundation\Request $request The http request.
+     * @param RequestStack $request The http request.
      */
-    public function setRequest(Request $request)
+    public function setRequest(RequestStack $request)
     {
         $this->request = $request;
     }
@@ -134,7 +135,7 @@ class PlacesAutocompleteType extends AbstractType
         $autocomplete->setValue($view->vars['value']);
         $autocomplete->setInputAttribute('name', $view->vars['full_name']);
 
-        $view->vars['html'] = $this->getAutocompleteHelper()->renderHtmlContainer($autocomplete);
+        $view->vars['html']        = $this->getAutocompleteHelper()->renderHtmlContainer($autocomplete);
         $view->vars['javascripts'] = $this->getAutocompleteHelper()->renderJavascripts($autocomplete);
     }
 
@@ -149,7 +150,7 @@ class PlacesAutocompleteType extends AbstractType
             'types'                  => array(),
             'component_restrictions' => array(),
             'async'                  => false,
-            'language'               => $this->getRequest()->getLocale(),
+            'language'               => $this->getRequest()->getCurrentRequest()->getLocale(),
         ));
 
         $resolver->setAllowedTypes(array(

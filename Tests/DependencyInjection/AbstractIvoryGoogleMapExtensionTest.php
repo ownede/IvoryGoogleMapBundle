@@ -37,12 +37,12 @@ abstract class AbstractIvoryGoogleMapExtensionTest extends \PHPUnit_Framework_Te
      */
     protected function setUp()
     {
-        $this->requestMock = $this->getMock('Symfony\Component\HttpFoundation\Request');
+        $this->requestMock = $this->getMock('Symfony\Component\HttpFoundation\RequestStack');
 
         $this->container = new ContainerBuilder();
 //        $this->container->set(new Scope('request'));
         $this->container->setParameter('templating.engines', array('php', 'twig'));
-        $this->container->set('request', $this->requestMock);
+        $this->container->set('request_stack', $this->requestMock);
         $this->container->registerExtension(new IvoryGoogleMapExtension());
         $this->container->registerExtension($httpAdapterExtension = new WidopHttpAdapterExtension());
         $this->container->loadFromExtension($httpAdapterExtension->getAlias());
@@ -1115,14 +1115,14 @@ abstract class AbstractIvoryGoogleMapExtensionTest extends \PHPUnit_Framework_Te
         $this->loadConfiguration($this->container, 'empty');
         $this->container->compile();
 
-        $this->container->enterScope('request');
+//        $this->container->enterScope('request');
 
         $this->assertInstanceOf(
             'Ivory\GoogleMapBundle\Form\Type\PlacesAutocompleteType',
             $this->container->get('ivory_google_map.places_autocomplete.form.type')
         );
 
-        $this->container->leaveScope('request');
+//        $this->container->leaveScope('request');
     }
 
     public function testTwigResources()
