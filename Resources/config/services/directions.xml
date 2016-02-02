@@ -13,13 +13,9 @@
     <services>
         <service id="ivory_google_map.directions" class="%ivory_google_map.directions.class%" />
 
-        <service
-            id="ivory_google_map.directions_request"
-            class="%ivory_google_map.directions_request.class%"
-            factory-service="ivory_google_map.directions_request.builder"
-            factory-method="build"
-            scope="prototype"
-        />
+        <service id="ivory_google_map.directions_request" class="%ivory_google_map.directions_request.class%" scope="prototype">
+            <factory service="ivory_google_map.directions_request.builder" method="build" />
+        </service>
 
         <service
             id="ivory_google_map.directions_request.builder"
