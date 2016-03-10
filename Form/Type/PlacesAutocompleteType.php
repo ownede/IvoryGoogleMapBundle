@@ -154,14 +154,12 @@ class PlacesAutocompleteType extends AbstractType
             'language'               => $this->getRequest()->getCurrentRequest()->getLocale(),
         ));
 
-        $resolver->setAllowedTypes(array(
-            'prefix'                 => array('string', 'null'),
-            'bound'                  => array('Ivory\GoogleMap\Base\Bound', 'array', 'null'),
-            'types'                  => array('array'),
-            'component_restrictions' => array('array'),
-            'async'                  => array('bool'),
-            'language'               => array('string'),
-        ));
+        $resolver->setAllowedTypes('prefix', ['string', 'null']);
+        $resolver->setAllowedTypes('bound', ['Ivory\GoogleMap\Base\Bound', 'array', 'null']);
+        $resolver->setAllowedTypes('types', 'array');
+        $resolver->setAllowedTypes('component_restrictions', 'array');
+        $resolver->setAllowedTypes('async', 'bool');
+        $resolver->setAllowedTypes('language', 'string');
     }
 
     /**
