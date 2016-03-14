@@ -94,7 +94,9 @@ class PlacesAutocompleteType extends AbstractType
     {
         $autocomplete = new Autocomplete();
 
-        if ($options['prefix'] !== null) {
+        if ($options['js_var'] !== null) {
+            $autocomplete->setJavascriptVariable($options['js_var']);
+        } elseif ($options['prefix'] !== null) {
             $autocomplete->setPrefixJavascriptVariable($options['prefix']);
         }
 
@@ -146,6 +148,7 @@ class PlacesAutocompleteType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
+            'js_var'                 => null,
             'prefix'                 => null,
             'bound'                  => null,
             'types'                  => array(),
@@ -154,6 +157,7 @@ class PlacesAutocompleteType extends AbstractType
             'language'               => $this->getRequest()->getCurrentRequest()->getLocale(),
         ));
 
+        $resolver->setAllowedTypes('js_var', ['string', 'null']);
         $resolver->setAllowedTypes('prefix', ['string', 'null']);
         $resolver->setAllowedTypes('bound', ['Ivory\GoogleMap\Base\Bound', 'array', 'null']);
         $resolver->setAllowedTypes('types', 'array');
